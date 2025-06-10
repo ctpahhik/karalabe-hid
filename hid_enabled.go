@@ -198,8 +198,8 @@ func (dev *hidDevice) Write(b []byte) (int, error) {
 	var report []byte
 	fixlen := 0
 	if runtime.GOOS == "windows" {
-		report = append([]byte{0x00}, b...)
-		fixlen = -1
+		report = b
+		//fixlen = -1
 	} else {
 		report = b
 	}
